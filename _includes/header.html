@@ -1,0 +1,16 @@
+<nav>
+  <div>
+    <!-- Links -->
+    <a href="/" class="home">{{ site.data.translations['home'][site.active_lang] }}</a>
+    <div class="spacer"></div>
+    <!-- font size -->
+    <button id="decreaseFont">-</button>
+    <span class="font-size-icon" id="resetFont">aA</span>
+    <button id="increaseFont">+</button>
+    <div class="vert-divider" style="margin-left: 10px"></div>
+    <!-- i18n -->
+    {% for lang in site.languages %}
+    <a class="lang-selector" {% static_href %}href="{% if lang == site.default_lang %}{{site.baseurl}}{{page.url}}{% else %}{{site.baseurl}}/{{ lang }}{{page.url}}{% endif %}"{% endstatic_href %} >{{ site.data.languages[lang] }}</a>
+    {% endfor %}
+  </div>
+</nav>

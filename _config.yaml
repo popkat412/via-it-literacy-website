@@ -1,0 +1,20 @@
+baseurl: ""
+
+# plugins
+plugins:
+  - jekyll-polyglot
+
+# collections
+collections:
+  tutorials:
+    output: true
+    permalink: /:collection/:name
+
+# i18n
+languages: ["en", "zh", "hi"]
+default_lang: "en"
+exclude_from_localization: ["js", "css", "public"]
+parallel_localization: true
+
+sass:
+  sourcemap: never
