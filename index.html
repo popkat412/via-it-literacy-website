@@ -4,7 +4,7 @@ permalink: /
 title: Home
 ---
 
-<img src="/assets/images/banner.svg" alt="{{ site.data.translations['banner alt'][site.active_lang] }}" class="banner-img">
+<img src={{"/assets/images/banner.svg" | prepend:site.baseurl }} alt="{{ site.data.translations['banner alt'][site.active_lang] }}" class="banner-img">
 
 <ul>
 {% for tutorial in site.tutorials %}
