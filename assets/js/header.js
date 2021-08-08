@@ -1,7 +1,7 @@
 // vim:foldmethod=marker
 
 // Font size changer {{{
-const DEFAULT_FONT_SIZE = 15;
+const DEFAULT_FONT_SIZE = 20;
 
 const incFontButton = document.getElementById("increaseFont");
 const decFontButton = document.getElementById("decreaseFont");
@@ -30,9 +30,12 @@ function changeFontSize(change, absolute) {
   for (const el of document.getElementsByClassName("content")) {
     let size = parseInt(el.style.fontSize, 10);
     if (!size || isNaN(size)) size = DEFAULT_FONT_SIZE;
+
     if (absolute) size = change;
     else size += change;
+
     el.style.fontSize = `${size}px`;
+
     localStorage.setItem("fontSize", el.style.fontSize);
   }
 }

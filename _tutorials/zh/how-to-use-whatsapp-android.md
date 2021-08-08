@@ -1,7 +1,5 @@
 ---
-title: 测试
+title: How to use WhatsApp
 layout: tutorial
 lang: zh
 ---
-
-你好 (ios)
