@@ -5,7 +5,6 @@ exclude: ["resources/"]
 # plugins
 plugins:
   - jekyll-polyglot
-  - jekyll-pandoc
 
 # markdown: Pandoc
 
