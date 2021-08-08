@@ -1,3 +1,6 @@
+/* Constants */
+const DEFAULT_FONT_SIZE = 15;
+
 /* Font size changer */
 const incFontButton = document.getElementById("increaseFont");
 const decFontButton = document.getElementById("decreaseFont");
@@ -12,16 +15,24 @@ decFontButton.addEventListener("click", () => {
 });
 
 resetFontButton.addEventListener("click", () => {
-  changeFontSize(15, true);
+  changeFontSize(DEFAULT_FONT_SIZE, true);
 });
+
+// Set the font size on page load from localStorage
+(function () {
+  let size = parseInt(localStorage.getItem("fontSize"));
+  if (isNaN(size)) size = DEFAULT_FONT_SIZE;
+  changeFontSize(size, true);
+})();
 
 function changeFontSize(change, absolute) {
   for (const el of document.getElementsByClassName("content")) {
     let size = parseInt(el.style.fontSize, 10);
-    if (!size || isNaN(size)) size = 15;
+    if (!size || isNaN(size)) size = DEFAULT_FONT_SIZE;
     if (absolute) size = change;
     else size += change;
     el.style.fontSize = `${size}px`;
+    localStorage.setItem("fontSize", el.style.fontSize);
   }
 }
 

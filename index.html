@@ -4,10 +4,11 @@ permalink: /
 title: Home
 ---
 
-<img src={{"/assets/images/banner.svg" | prepend:site.baseurl }} alt="{{ site.data.translations['banner alt'][site.active_lang] }}" class="banner-img">
+<img src={{"/assets/images/banner.svg" | relative_url }} alt="{{
+site.data.translations['banner alt'][site.active_lang] }}" class="banner-img">
 
 <ul>
-{% for tutorial in site.tutorials %}
-<li><a href="{{ tutorial.url }}">{{ tutorial.title }}</a></li>
-{% endfor %}
+  {% for tutorial in site.tutorials %}
+  <li><a href="{{ tutorial.url }}">{{ tutorial.title }}</a></li>
+  {% endfor %}
 </ul>

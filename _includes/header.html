@@ -1,7 +1,7 @@
 <nav>
   <div>
     <!-- Links -->
-    <a href="/" class="home">{{ site.data.translations['home'][site.active_lang] }}</a>
+    <a href={{"/" | relative_url }} class="home">{{ site.data.translations['home'][site.active_lang] }}</a>
     <div class="spacer"></div>
     <!-- font size -->
     <button id="decreaseFont">-</button>
