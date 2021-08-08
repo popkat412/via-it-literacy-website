@@ -4,4 +4,4 @@ layout: tutorial
 lang: zh
 ---
 
-你好
+你好 (ios)

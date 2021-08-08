@@ -1,7 +1,8 @@
-/* Constants */
+// vim:foldmethod=marker
+
+// Font size changer {{{
 const DEFAULT_FONT_SIZE = 15;
 
-/* Font size changer */
 const incFontButton = document.getElementById("increaseFont");
 const decFontButton = document.getElementById("decreaseFont");
 const resetFontButton = document.getElementById("resetFont");
@@ -35,8 +36,9 @@ function changeFontSize(change, absolute) {
     localStorage.setItem("fontSize", el.style.fontSize);
   }
 }
+// }}}
 
-/* Scroll progress bar */
+// Scroll progress bar {{{
 document.addEventListener("scroll", () => {
   const docElem = document.documentElement;
   const docBody = document.body;
@@ -49,3 +51,4 @@ document.addEventListener("scroll", () => {
   if (progressBar)
     progressBar.style.setProperty("--scrollAmount", scrollPercent);
 });
+// }}}

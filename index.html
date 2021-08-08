@@ -4,11 +4,18 @@ permalink: /
 title: Home
 ---
 
-<img src={{"/assets/images/banner.svg" | relative_url }} alt="{{
-site.data.translations['banner alt'][site.active_lang] }}" class="banner-img">
+<img
+    src={{"/assets/images/banner.svg" | relative_url }}
+    alt="{{site.data.translations['banner alt'][site.active_lang] }}"
+    class="banner-img"
+>
 
-<ul>
-  {% for tutorial in site.tutorials %}
-  <li><a href="{{ tutorial.url }}">{{ tutorial.title }}</a></li>
+<ul id="tutorials-list">
+  {% for tutorial in site.data.non_dup_tuts %}
+    <li>
+      <a 
+        href="{{ tutorial.url | relative_url }}"
+      >{{ tutorial.title }}</a>
+    </li>
   {% endfor %}
 </ul>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href={{ "/assets/css/styles.css" | relative_url}}>
+    <script src={{ "/assets/js/globals.js" | relative_url }}></script>
   </head>
   
   <body>
@@ -12,11 +13,20 @@
       {% include header.html %}
       <div id="progress-bar"></div>
     </div>
+
     <div class="content">
+      {% unless page.os_unspecific %}
+        <div class="segmented-control">
+          <div id="os-android">Android</div>
+          <div id="os-ios">iOS</div>
+        </div>
+      {% endunless %}
+
       {{ content }}
     </div>
+
     {% include footer.html %}
     
-    <script src={{ "/assets/js/script.js" | prepend: site.baseurl }}></script>
+    <script src={{ "/assets/js/tutorial.js" | relative_url }}></script>
   </body>
 </html>

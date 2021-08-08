@@ -4,7 +4,7 @@ layout: tutorial
 lang: en
 ---
 
-# Hi this is a test tutorial
+# Hi this is a test tutorial (Android)
 
 Lorem ipsam error recusandae cum aspernatur. Facere veritatis a voluptate eos
 quam. Nobis praesentium fugiat aut a blanditiis Rerum facilis libero numquam
