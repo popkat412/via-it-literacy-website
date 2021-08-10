@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+body { font-family: "Source Sans Pro", sans-serif; font-size: 20px; }
+
+button { cursor: pointer; }
+
+.content { font-size: 15px; margin-top: 70px; transition: all 0.5s; }
+
+@media (min-width: 700px) { .content { margin-right: 20%; margin-left: 20%; } }
+
+.spacer { flex-grow: 1; }
+
+.vert-divider { border-left: 1px solid gray; height: 28px; width: 0; background-color: gray; padding: 0; margin: 0px 5px; }
+
+.stick-to-top { position: fixed; top: 0; margin: 0 -8px; }
+
+.banner-img { width: 100%; height: 50vh; margin: auto; display: block; }
+
+.content img { width: 15em; }
+
+.content > p > img { margin: auto; display: block; }
+
+nav { background: linear-gradient(to left, #111, #333); padding: 0; color: white; width: 100vw; }
+
+nav div { display: flex; align-items: center; padding-right: 10px; height: 100%; }
+
+nav .lang-selector { padding: 10px 2px; text-decoration: none; }
+
+nav .home { color: white; padding: 10px; text-decoration: none; background: #396afc; /* fallback for old browsers */ background: -webkit-linear-gradient(to right, #2948ff, #396afc); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(to bottom right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+
+nav div > button { height: fit-content; }
+
+nav .font-size-icon { margin: 0 5px; cursor: pointer; }
+
+footer { color: gray; font-size: 0.7rem; text-align: center; margin-top: 20px; }
+
+#progress-bar { --scrollAmount: 0%; background: #8e2de2; /* fallback for old browsers */ background: -webkit-linear-gradient(to right, #4a00e0, #8e2de2); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(to right, #4a00e0, #8e2de2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ width: var(--scrollAmount); height: 10px; }
+
+.segmented-control { display: flex; }
+
+.segmented-control div { width: max-content; padding: 10px 5px; margin: 0 2px; transition: 0.5s; border-bottom: 2px solid white; cursor: pointer; }
+
+.segmented-control div:hover, .segmented-control div.active { background-color: #cfe6ff; border-bottom: 2px solid blue; }
