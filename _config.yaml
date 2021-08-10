@@ -1,6 +1,6 @@
 baseurl: "/via-it-literacy-website"
 
-exclude: ["resources/"]
+exclude: ["resources", "scripts"]
 
 # plugins
 plugins:

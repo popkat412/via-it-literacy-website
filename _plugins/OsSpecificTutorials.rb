@@ -2,13 +2,22 @@ module Jekyll
   class OsSpecificTutorialsGenerator < Generator
     safe true
     def generate(site)
+      # puts("Active lang: #{site.active_lang}")
       tutorials = site.collections["tutorials"]
       docs = tutorials.docs
       site.data["non_dup_tuts"] = []
       docs.each do |doc|
-        match = /\/([\w-]+)-(ios|android)\.\w+$/.match(doc.path)
         title = doc["title"]
-        if match
+        puts("title: #{title}, lang: #{doc["lang"]}")
+        # lang = doc["lang"]
+        # puts("Doc title: #{title}, lang: #{lang}")
+        # if site.active_lang != lang
+        #   puts("excluding")
+        #   next
+        # end
+        # puts("including")
+        begin
+          match = /\/([\w-]+)-(ios|android)\.\w+$/.match(doc.path)
           captures = match.captures
           id = captures[0]
           os = captures[1]
@@ -20,7 +29,7 @@ module Jekyll
               "os_specific" => true,
             })
           end
-        else
+        rescue
           site.data["non_dup_tuts"].push({
             "id" => doc.path, 
             "url" => doc.permalink, 

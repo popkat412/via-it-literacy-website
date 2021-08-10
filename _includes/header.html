@@ -1,7 +1,7 @@
-<nav>
+<nav class="header">
   <div>
     <!-- Links -->
-    <a href={{"/" | relative_url }} class="home">{{ site.data.translations['home'][site.active_lang] }}</a>
+  <a {% if site.active_lang != site.default_lang %} href={{ "/" | relative_url |  append: site.active_lang }} {% else %} href={{ "/" | relative_url }} {% endif %} class="home">{{ site.data.translations['home'][site.active_lang] }}</a>
     <div class="spacer"></div>
     <!-- font size -->
     <button id="decreaseFont">-</button>
